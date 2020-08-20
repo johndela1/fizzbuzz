@@ -1,11 +1,23 @@
-from fizzbuzz import fizz_buzz
+from fizzbuzz import fizz_buzz, fizz_buzz_2
+
+
+arg_to_expected = [
+    (1, "1"),
+    (3, "fizz"),
+    (4, "4"),
+    (5, "buzz"),
+    (6, "fizz"),
+    (10, "buzz"),
+    (15, "fizzbuzz"),
+    (30, "fizzbuzz"),
+]
 
 
 def test_fizz_buzz():
-    assert fizz_buzz(1) == "1"
-    assert fizz_buzz(3) == "fizz"
-    assert fizz_buzz(5) == "buzz"
-    assert fizz_buzz(6) == "fizz"
-    assert fizz_buzz(10) == "buzz"
-    assert fizz_buzz(15) == "fizzbuzz"
-    assert fizz_buzz(30) == "fizzbuzz"
+    for arg, expected in arg_to_expected:
+        assert fizz_buzz(arg) == expected
+
+
+def test_fizz_buzz_2():
+    for arg, expected in arg_to_expected:
+        assert fizz_buzz_2(arg) == expected
