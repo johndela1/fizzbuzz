@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def fizz_buzz_tr1(n):
+def fizz_buzz_tr_2(n):
     out = ""
     if n % 3 == 0:
         out += "fizz"
@@ -12,14 +12,14 @@ def fizz_buzz_tr1(n):
     return out
 
 
-def fizz_buzz_tr2(n):
-    fizz = "" if n % 3 else "fizz"
-    buzz = "" if n % 5 else "buzz"
+def fizz_buzz_tr(n):
+    fizz = "fizz" if n % 3 == 0 else ""
+    buzz = "buzz" if n % 5 == 0 else ""
     return f"{fizz}{buzz}" or str(n)
 
 
-def fizz_buzz(f):
-    return ' '.join(f(n) for n in range(1, 101))
+def fizz_buzz():
+    return ' '.join(fizz_buzz_tr(n) for n in range(1, 101))
 
 if __name__ == "__main__":
-    print(fizz_buzz(fizz_buzz_tr2))
+    print(fizz_buzz())
