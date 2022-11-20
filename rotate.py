@@ -16,8 +16,7 @@ class C:
 
 
 def rotate(xs):
-    ys = list(xs)
-    return tuple(ys[-1:] + ys[:-1])
+    return tuple(xs[-1:] + xs[:-1])
 
 
 count = 9
