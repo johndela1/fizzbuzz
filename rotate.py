@@ -15,9 +15,12 @@ class C:
         return str(self.pos)
 
 
-def rotate(xs):
-    return tuple(xs[-1:] + xs[:-1])
-
+def rotate(xs, direction="right"):
+    def right(xs):
+        return tuple(xs[-1:] + xs[:-1])
+    def left(xs):
+        return [xs[(i+1)%len(xs)] for i in range(len(xs))]
+    return right(cs) if direction == 'right' else left(cs)
 
 count = 4
 slen = isqrt(count)
@@ -31,6 +34,7 @@ for _ in range(count+1):
     for i in range(1, count+1):
         print(cs[i-1], end=" ")
         if i % slen == 0:
-            print()
-    cs = rotate(cs)
+            # print()
+            pass
+    cs = rotate(cs, 'right')
     print()
