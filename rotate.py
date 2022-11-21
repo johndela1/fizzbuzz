@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.9
 
-from math import sqrt
+from math import isqrt
 
 
 class C:
@@ -19,8 +19,11 @@ def rotate(xs):
     return tuple(xs[-1:] + xs[:-1])
 
 
-count = 9
-slen = sqrt(count)
+count = 4
+slen = isqrt(count)
+
+# possibly remove constraint and fill to next highest square
+assert count == slen ** 2, "count must be square number"
 
 cs = tuple(C(pos=n) for n in range(count))
 
