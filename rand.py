@@ -12,5 +12,6 @@ def rand(n, bits=32):
         x = (a * x + c) & (m - 1)
         yield x
 
-for n in rand(20, bits=5):
-    print(n)
+for n in rand(20000, bits=32):
+    print(n, end='')
+print()
