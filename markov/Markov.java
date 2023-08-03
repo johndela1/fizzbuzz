@@ -2,15 +2,16 @@ import java.io.*;
 import java.util.*;
 
 class Prefix {
-    Vector pref;
+    Vector<String> pref;
+
     Prefix(Prefix p)
     {
-	pref = (Vector) p.pref.clone();
+	pref = (Vector<String>) p.pref.clone();
     }
 
     Prefix(int sz, String str)
     {
-	pref = new Vector();
+	pref = new Vector<>();
 	for (int i = 0; i < sz; i++)
 	    pref.addElement(str);
     }
@@ -65,16 +66,9 @@ class Chain {
 
     void generate(int wcount)
     {
-	for (Enumeration e = statetab.keys(); e.hasMoreElements();)
-	    System.out.println(e.nextElement());
 	prefix = new Prefix(PREF_SZ, NONWORD);
-	System.out.println("genprefix");
-	System.out.println(prefix);
 	for (int i = 0; i < wcount; i++) {
 	    Vector s = (Vector) statetab.get(prefix);
-	    System.out.println("vecotr");
-	    System.out.println(s);
-
 	    int r = Math.abs(rand.nextInt() % s.size());
 	    String suf = (String) s.elementAt(r);
 	    System.out.println(suf);
