@@ -6,7 +6,6 @@ def swap(seq, i, j):
 
 
 def perm(seq, i, n):
-    # import pdb; pdb.set_trace()
     if i >= n:
         print(seq)
     else:
